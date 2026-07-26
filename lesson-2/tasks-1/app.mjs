@@ -1,4 +1,3 @@
-import {argv} from "process";
 import readline from "readline";
 const URLSearchString = argv.slice(2).join('&')
 const args = new URLSearchParams(URLSearchString)
