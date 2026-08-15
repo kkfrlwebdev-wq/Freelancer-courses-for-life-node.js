@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Редагування книги</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+    <main class="book-form-page">
+        <section class="book-form-card">
+            <div class="book-form-header">
+                <h1> <%= dataBook ? `Редагування книги`: 'Додати книгу' %></h1>
+               
+            </div>
+
+            <form class="book-form" action="/books<%= dataBook ? `/${dataBook.id}`: '/' %>" method="POST">
+                <div class="form-row">
+                    <label for="book-name">Назва книги</label>
+                    <input id="book-name" name="name" type="text" value="<%= dataBook?.name %>" required />
+                </div>
+
+                <div class="form-row">
+                    <label for="book-category">Категорія</label>
+                    <input id="book-category" name="category" type="text" value="<%= dataBook?.category %>" required />
+                </div>
+
+                <div class="form-row">
+                    <label for="book-price">Ціна</label>
+                    <input id="book-price" name="price" type="number" min="0" value="<%= dataBook?.price %>" required />
+                </div>
+
+                <div class="form-row">
+                    <label for="book-stock">Кількість на складі</label>
+                    <input id="book-stock" name="inStock" type="number" min="0" value="<%= dataBook?.inStock %>"
+                        required />
+                </div>
+
+                <div class="form-row">
+                    <label for="book-description">Опис</label>
+                    <textarea id="book-description" name="description" rows="5"
+                        required><%= dataBook?.description %></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-save">Зберегти</button>
+                    <a href="/books" class="btn btn-delete">Скасувати</a>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>

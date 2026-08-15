@@ -1,0 +1,34 @@
+[
+  {
+    "id": "3f3f5ec7-f7d5-4ae5-bd3b-66ab2d7e1c7f",
+    "name": "JavaScript для дітей",
+    "category": "Програмування",
+    "price": "320",
+    "inStock": "12",
+    "description": "Книга про основи JavaScript для початківців."
+  },
+  {
+    "id": "2d9d8a64-6d0a-46fc-9242-9d6ac7f7d14c",
+    "name": "Node.js від нуля",
+    "category": "Backend",
+    "price": "450",
+    "inStock": "8",
+    "description": "Практичний посібник з створення серверів на Node.js."
+  },
+  {
+    "id": "4b8f5b57-4ea5-47b0-a5d6-b17d77aa50de",
+    "name": "Express в дії",
+    "category": "Web Development",
+    "price": "390",
+    "inStock": "15",
+    "description": "Збірка прикладів для створення API та веб-додатків."
+  },
+  {
+    "id": "7f12a9a1-722a-4672-b821-1d27a9060275",
+    "name": "CSS Magic",
+    "category": "Дизайн",
+    "price": "270",
+    "inStock": "20",
+    "description": "Покроковий посібник зі стилізації інтерфейсів."
+  }
+]

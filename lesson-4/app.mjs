@@ -12,7 +12,7 @@ import logger from "morgan";
 import { fileURLToPath } from "url";
 
 import indexRouter from "./routes/index.mjs";
-import usersRouter from "./routes/users.mjs";
+import booksRouter from "./routes/books.mjs";
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
@@ -28,7 +28,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
+app.use("/books", booksRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

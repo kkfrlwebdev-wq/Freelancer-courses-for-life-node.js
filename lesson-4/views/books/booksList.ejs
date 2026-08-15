@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        BOOKS LIST
+    </title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+
+    <h1 class="book-title"> Welcome to BOOKS LIST
+    </h1>
+    <div class="book-action"><a href="/books/add-book" class="btn btn-add">додати товар</a></div>
+
+    <section class="book-list">
+
+        <% dataBooks.forEach(function(book) { %>
+            <article class="book-card">
+                <h2>
+                    <%= book.name %>
+                </h2>
+                <p class="book-category">Категорія: <%= book.category %>
+                </p>
+                <p class="book-description">
+                    <%= book.description %>
+                </p>
+                <p class="book-price">Ціна: <%= book.price %> грн</p>
+                <p class="book-stock">В наявності: <%= book.inStock %>
+                </p>
+                <div class="book-action">
+                    <a href="/books/edit/<%= book.id%>" class="btn btn-edit" ">редагувати</a>
+
+                    <button onclick=" deleteResource('<%= book.id %>')" class="btn btn-delete">видалити</button>
+                </div>
+            </article>
+            <% }) %>
+
+    </section>
+
+</body>
+<script>
+    async function deleteResource(id) {
+        try {
+            const response = await fetch(`/books/${id}`, {
+                method: 'DELETE'
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            const data = await response.json().catch(() => null);
+            console.log('Server response:', data ?? 'No content');
+
+            if (data?.success) {
+                window.location.reload();
+            }
+        } catch (error) {
+            console.error('Failed to execute DELETE request:', error);
+        }
+    }
+</script>
+
+</html>
