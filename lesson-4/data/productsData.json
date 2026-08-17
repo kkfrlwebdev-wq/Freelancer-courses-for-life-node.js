@@ -2,6 +2,8 @@
   {
     "id": "3f3f5ec7-f7d5-4ae5-bd3b-66ab2d7e1c7f",
     "name": "JavaScript для дітей",
+    "author": "Іван Петренко",
+    "year": 2023,
     "category": "Програмування",
     "price": "320",
     "inStock": "12",
@@ -10,6 +12,8 @@
   {
     "id": "2d9d8a64-6d0a-46fc-9242-9d6ac7f7d14c",
     "name": "Node.js від нуля",
+    "author": "Марія Коваленко",
+    "year": 2024,
     "category": "Backend",
     "price": "450",
     "inStock": "8",
@@ -18,6 +22,8 @@
   {
     "id": "4b8f5b57-4ea5-47b0-a5d6-b17d77aa50de",
     "name": "Express в дії",
+    "author": "Олег Семенов",
+    "year": 2022,
     "category": "Web Development",
     "price": "390",
     "inStock": "15",
@@ -26,6 +32,8 @@
   {
     "id": "7f12a9a1-722a-4672-b821-1d27a9060275",
     "name": "CSS Magic",
+    "author": "Юлія Бондар",
+    "year": 2021,
     "category": "Дизайн",
     "price": "270",
     "inStock": "20",

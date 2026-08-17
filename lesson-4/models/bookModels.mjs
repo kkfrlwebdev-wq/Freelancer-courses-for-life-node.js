@@ -10,9 +10,18 @@ class BookModels {
     return this.dataFileManager.loadData();
   }
 
-  openEditForm(id) {
+  addBookById(id) {
     return this.dataFileManager.getItemById(id);
   }
+
+  findByAuthor(author) {
+    return this.dataFileManager.findByAuthor(author);
+  }
+
+  filterByYear(year) {
+    return this.dataFileManager.filterByYear(year);
+  }
+
   updatedBook(id, updatedProperties) {
     this.dataFileManager.updatedItemById(id, updatedProperties);
   }
@@ -20,8 +29,8 @@ class BookModels {
   saveNewBook(data) {
     this.dataFileManager.addItem(data);
   }
-  deleteBook(id){
-    this.dataFileManager.deleteItemById(id)
+  deleteBook(id) {
+    this.dataFileManager.deleteItemById(id);
   }
 }
 export default BookModels;

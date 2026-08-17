@@ -12,8 +12,10 @@
     <main class="book-form-page">
         <section class="book-form-card">
             <div class="book-form-header">
-                <h1> <%= dataBook ? `Редагування книги`: 'Додати книгу' %></h1>
-               
+                <h1>
+                    <%= dataBook ? `Редагування книги`: 'Додати книгу' %>
+                </h1>
+
             </div>
 
             <form class="book-form" action="/books<%= dataBook ? `/${dataBook.id}`: '/' %>" method="POST">
@@ -23,8 +25,19 @@
                 </div>
 
                 <div class="form-row">
+                    <label for="book-author">Автор</label>
+                    <input id="book-author" name="author" type="text" value="<%= dataBook?.author %>" required />
+                </div>
+
+                <div class="form-row">
                     <label for="book-category">Категорія</label>
                     <input id="book-category" name="category" type="text" value="<%= dataBook?.category %>" required />
+                </div>
+
+                <div class="form-row">
+                    <label for="book-year">Рік видання</label>
+                    <input id="book-year" name="year" type="number" min="1900" max="2100" value="<%= dataBook?.year %>"
+                        required />
                 </div>
 
                 <div class="form-row">

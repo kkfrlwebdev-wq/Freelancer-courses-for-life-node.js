@@ -94,9 +94,55 @@ p {
 
 .book-action{
   display: flex;
-  justify-content:center;align-items: center;
+  justify-content:space-between;
+  align-items: center;
   gap: 4px;
 
+}
+.book-action--center{
+    text-align: center;
+    justify-content:center;
+}
+
+.search-form {
+    max-width: 900px;
+    margin: 24px auto 12px;
+    padding: 0 20px;
+}
+
+.search-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.search-input {
+    min-width: 200px;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    background: #fff;
+}
+
+.btn-search {
+    background: #1d4ed8;
+    color: #fff;
+}
+
+.book-link {
+    display: inline-block;
+    margin: 8px 0 14px;
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.book-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
 }
 
 
@@ -104,7 +150,9 @@ p {
 
 
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     padding: 5px 10px;
     border-radius: 8px;
     border: none;
@@ -136,6 +184,11 @@ p {
     color: #fff;
 }
 
+.btn-secondary {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
 .btn-add:hover {
     opacity: 0.92;
 }
@@ -145,6 +198,10 @@ p {
 }
 
 .btn-delete:hover {
+    opacity: 0.92;
+}
+
+.btn-secondary:hover {
     opacity: 0.92;
 }
 
@@ -245,8 +302,11 @@ p {
 }
 
 .btn-secondary {
+   
+     text-align: center;
     background: #e2e8f0;
     color: #1e293b;
+   
 }
 
 .btn-secondary:hover {

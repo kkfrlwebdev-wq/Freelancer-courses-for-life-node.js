@@ -12,27 +12,44 @@
 
     <h1 class="book-title"> Welcome to BOOKS LIST
     </h1>
-    <div class="book-action"><a href="/books/add-book" class="btn btn-add">додати товар</a></div>
+
+    <div class="book-action book-action--center">
+        <a href="/books/add-book" class="btn btn-add">додати товар</a>
+    </div>
+
+    <form action="/books" method="GET" class="search-form">
+        <div class="search-row">
+            <input type="text" name="author" class="search-input" placeholder="Пошук за автором"
+                value="<%= filters?.author || '' %>" />
+
+            <input type="number" name="year" class="search-input" placeholder="Рік" min="1900" max="2100"
+                value="<%= filters?.year || '' %>" />
+
+            <button type="submit" class="btn btn-search">пошук</button>
+            <a href="/books" class="btn btn-secondary">скинути</a>
+        </div>
+    </form>
 
     <section class="book-list">
 
         <% dataBooks.forEach(function(book) { %>
+
             <article class="book-card">
                 <h2>
                     <%= book.name %>
                 </h2>
+                <p class="book-category">Автор: <%= book.author || 'Невідомий' %>
+                </p>
                 <p class="book-category">Категорія: <%= book.category %>
                 </p>
-                <p class="book-description">
-                    <%= book.description %>
+                <p class="book-category">Рік: <%= book.year || '—' %>
                 </p>
                 <p class="book-price">Ціна: <%= book.price %> грн</p>
-                <p class="book-stock">В наявності: <%= book.inStock %>
-                </p>
+                <a href="/books/detailsBook/<%= book.id %>" class="book-link">детально</a>
                 <div class="book-action">
-                    <a href="/books/edit/<%= book.id%>" class="btn btn-edit" ">редагувати</a>
+                    <a href="/books/edit/<%= book.id%>" class="btn btn-edit">редагувати</a>
 
-                    <button onclick=" deleteResource('<%= book.id %>')" class="btn btn-delete">видалити</button>
+                    <button onclick="deleteResource('<%= book.id %>')" class="btn btn-delete">видалити</button>
                 </div>
             </article>
             <% }) %>

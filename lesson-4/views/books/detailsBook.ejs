@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Book Details</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+    <div class="book-form-page">
+        <div class="book-form-card">
+            <div class="book-form-header">
+                <h1>
+                    <%= dataBook.name %>
+                </h1>
+            </div>
+
+            <div class="book-form">
+                <div class="form-row">
+                    <label>Автор</label>
+                    <p>
+                        <%= dataBook.author || 'Невідомий' %>
+                    </p>
+                </div>
+
+                <div class="form-row">
+                    <label>Категорія</label>
+                    <p>
+                        <%= dataBook.category %>
+                    </p>
+                </div>
+
+                <div class="form-row">
+                    <label>Рік видання</label>
+                    <p>
+                        <%= dataBook.year || '—' %>
+                    </p>
+                </div>
+
+                <div class="form-row">
+                    <label>Опис</label>
+                    <p>
+                        <%= dataBook.description %>
+                    </p>
+                </div>
+
+                <div class="form-row">
+                    <label>Ціна</label>
+                    <p>
+                        <%= dataBook.price %> грн
+                    </p>
+                </div>
+
+                <div class="form-row">
+                    <label>В наявності</label>
+                    <p>
+                        <%= dataBook.inStock %>
+                    </p>
+                </div>
+
+                <div class="form-actions">
+                    <a href="/books/edit/<%= dataBook.id %>" class="btn btn-edit">редагувати</a>
+                    <a href="/books" class="btn btn-secondary">назад до списку</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

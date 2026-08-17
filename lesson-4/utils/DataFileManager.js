@@ -73,6 +73,41 @@ class DataFileManager {
     }
   }
 
+  // Метод пошуку книг за автором
+  findByAuthor(author) {
+    try {
+      const data = this.loadData();
+      const searchText = String(author ?? '').trim().toLowerCase();
+
+      if (!searchText) {
+        return data;
+      }
+
+      return data.filter((item) => {
+        const itemAuthor = typeof item.author === 'string' ? item.author.toLowerCase() : '';
+        return itemAuthor.includes(searchText);
+      });
+    } catch (err) {
+      throw new Error(`Помилка при пошуку за автором: ${err.message}`);
+    }
+  }
+
+  // Метод фільтрації книг за роком видання
+  filterByYear(year) {
+    try {
+      const data = this.loadData();
+      const targetYear = Number(year);
+
+      if (Number.isNaN(targetYear)) {
+        return data;
+      }
+
+      return data.filter((item) => Number(item.year) === targetYear);
+    } catch (err) {
+      throw new Error(`Помилка при фільтрації за роком: ${err.message}`);
+    }
+  }
+
   // Метод видалення об'єкта у файлі з заданим id
   deleteItemById(id) {
     try {
