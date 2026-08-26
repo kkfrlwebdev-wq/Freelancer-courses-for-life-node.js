@@ -13,12 +13,12 @@
         <section class="book-form-card">
             <div class="book-form-header">
                 <h1>
-                    <%= dataBook ? `Редагування книги`: 'Додати книгу' %>
+                    <%= dataBook?.id ? `Редагування книги`: 'Додати книгу' %>
                 </h1>
 
             </div>
 
-            <form class="book-form" action="/books<%= dataBook ? `/${dataBook.id}`: '/' %>" method="POST">
+            <form class="book-form" action="/books<%= dataBook ? `/${dataBook?.id}`: '/' %>" method="POST">
                 <div class="form-row">
                     <label for="book-name">Назва книги</label>
                     <input id="book-name" name="name" type="text" value="<%= dataBook?.name %>" required />
