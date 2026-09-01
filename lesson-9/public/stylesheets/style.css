@@ -1,0 +1,16 @@
+body.home {
+  padding: 0 !important;
+  margin: 0;
+}
+body {
+  padding: 0px;
+  font:
+    14px 'Lucida Grande',
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
