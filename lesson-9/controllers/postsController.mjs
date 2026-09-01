@@ -3,11 +3,14 @@ import UsersDBService from '../models/user/UsersDBService.mjs'
 
 class PostsController {
   static async getList(req, res) {
+
+    
     try {
       const filters = {}
 
       const users = await UsersDBService.getList({})
       const posts = await PostsDBService.getList(filters)
+      console.log(users.authors);
       res.render('posts/list', { posts, users })
     } catch (err) {
       res.status(500).json({ error: err.message })
