@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <main class="products-page">
+        <%- include("components/header") %>
+        <h1 class="products-page__title">
+            <%= title %>
+        </h1>
+
+        <section class="products-grid" aria-label="Products">
+            <% products.forEach((product)=> { %>
+                <article class="product-card">
+                    <h2 class="product-card__title">
+                        <%= product.title %>
+                    </h2>
+                    <p class="product-card__description">
+                        <%= product.description %>
+                    </p>
+                    <div class="product-card__details">
+                        <p class="product-card__price">Ціна: <strong><%= product.price %> грн</strong></p>
+                        <p class="product-card__quantity">Кількість: <strong><%= product.quantity %></strong></p>
+                    </div>
+                </article>
+            <% }) %>
+        </section>
+    </main>
+</body>
+
+</html>
